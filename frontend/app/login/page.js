@@ -14,7 +14,10 @@ export default function Login() {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       toast.success('Login successful');
-      router.push(res.data.user.role === 'admin' ? '/dashboard/admin' : '/dashboard');
+          
+        router.push(res.data.user.role === 'admin1'  ?  '/dashboard/admin' : '/dashboard');
+        
+      
     } catch (err) {
       toast.error(err.response?.data?.message || 'Login failed');
     }
